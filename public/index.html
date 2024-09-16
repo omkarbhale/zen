@@ -5,31 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./styles/style.css" >
+    <script src="./js/components.js"></script>
     <title>Penzu</title>
 </head>
 <body>
     <div class="wrapper">
-        <nav class="nav">
-            <div class="nav-logo">
-                <p>Penzu</p>
-            </div>
-            <div class="nav-menu">
-                <ul>
-                    <li><a href="#" Class = "link active">Home</a></li>
-                    <li><a href="#" Class = "link">Service</a></li>
-                    <li><a href="#" Class = "link">About</a></li>
-                    <li><a href="#" Class = "link">Download</a></li>
-                </ul>
-            </div>
-            <div class="nav-button">
-                <button class="btn white-btn" id ="loginBtn" onclick="login()" >Sign In</button>
-                <button class="btn" id ="registerBtn" onclick="register()">Sign Up</button>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
- 
+        <div data-url="./components/navbar.html"></div>
 
         <!-------------------------------- Form Box----------------------------------->
 
