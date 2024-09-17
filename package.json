@@ -1,0 +1,26 @@
+{
+  "name": "zen",
+  "version": "1.0.0",
+  "description": "for penzu clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omkarbhale/zen.git"
+  },
+  "author": "Saeel-g",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omkarbhale/zen/issues"
+  },
+  "homepage": "https://github.com/omkarbhale/zen#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "pg": "^8.13.0"
+  }
+}
