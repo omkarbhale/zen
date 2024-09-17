@@ -28,6 +28,24 @@ app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
+app.post('/register', async(req, res)=>{
+    const {firstName, lastName, email, password} = req.body;
+    const userCheck = await pool.query('SELECT * FROM users WHERE email = $1',[email]);
+    if(userCheck.rows.length > 0){
+        return res.status(400).send('User already exists');
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
+    await pool.query(
+        'INSERT INTO users (first_name, last_name, email, password) VALUE ($1, $2, $3, $4)',
+        [firstName, lastName, email, hashedPassword]
+    );
+
+    res.send('Registration successful');
+
+})
+
 app.listen(port, ()=>{
     console.log(`listning http://localhost:${port}`);
 })
