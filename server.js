@@ -13,7 +13,7 @@ const pool = new Pool({
     password: 'admin',
     port: 5432,
 });
-debugger
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -32,10 +32,7 @@ app.get('/', (req, res) => {
 // Register Route
 app.post('/register', async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    // console.assert(firstName == '', 'empty first name found' )
-    // console.assert(lastName == '', 'empty last name found' )
-    // console.assert(password == '', 'empty pass found' )
-    // console.assert(email == '', 'empty emailfound' )
+
     
     const userCheck = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
     if (userCheck.rows.length > 0) {
@@ -51,7 +48,7 @@ app.post('/register', async (req, res) => {
 
     res.send('Registration successful');
 
-});
+}); 
 
 // Login Route
 app.post('/login', async (req, res) => {
